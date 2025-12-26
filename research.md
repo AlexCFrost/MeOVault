@@ -20,6 +20,20 @@ Approximate nearest neighbor (ANN) search is used instead of exact similarity co
 
 From a UX research perspective, semantic search reduces cognitive load. Users no longer need to remember how they phrased something, when they wrote it, or how they categorized it. This lowers friction and encourages more frequent note capture, which improves the long-term value of the system. The planned “related notes” feature builds on this by surfacing connections proactively rather than reactively.
 
+A key limitation of most personal note systems is that they treat all notes as equally relevant over time. In reality, human memory is temporal: ideas gain or lose importance based on recency, repetition, and contextual reinforcement. MiOVault’s embedding-based architecture enables future exploration of time-aware semantic retrieval without altering the core data model.
+
+By combining vector similarity with temporal metadata, MiOVault can weight results not only by semantic closeness but also by recency or revisit frequency. This mirrors cognitive reinforcement, where frequently recalled memories remain more accessible than forgotten ones. Such weighting can improve perceived relevance without compromising semantic accuracy.
+
+Another research direction enabled by embeddings is the construction of implicit knowledge graphs. Notes can be treated as nodes, with semantic similarity acting as weighted edges. Over time, clusters of related thoughts naturally emerge, forming thematic regions in the user’s personal knowledge space. Unlike manually curated graphs, these relationships are learned automatically and evolve as new notes are added.
+
+This graph-based perspective allows MiOVault to move beyond search into discovery. Instead of asking “What did I write?”, users can explore how ideas connect, how themes evolve, and which concepts repeatedly co-occur. This transforms the system from a passive storage tool into an active thinking aid.
+
+Temporal-semantic graphs also support longitudinal insight. By analyzing how embeddings shift over time, the system can identify changing interests, recurring concerns, or abandoned ideas. This opens possibilities for reflective features such as weekly summaries, theme evolution timelines, or resurfacing long-forgotten but relevant thoughts.
+
+From a system design standpoint, this research reinforces the decision to store embeddings as first-class data. Because embeddings are stable, composable, and model-agnostic abstractions, they can support temporal weighting, clustering, and graph traversal without reprocessing historical notes.
+
+Overall, this research positions MiOVault as more than a note-taking application. It becomes a dynamic memory system that aligns with how human understanding evolves over time—capturing not just isolated thoughts, but the structure and progression of thinking itself.
+
 Privacy and data ownership are also key considerations. Since embeddings are derived representations of personal text, MiOVault treats them with the same sensitivity as raw notes. Embeddings are generated per request, stored per user, and are not reused across users. Future iterations may explore client-side embedding generation to further minimize data exposure.
 
 Finally, MiOVault positions embeddings as a foundational abstraction rather than a single feature. Once notes exist in a semantic vector space, higher-level capabilities such as clustering, trend detection, and thematic evolution over time become possible. This research-driven design ensures that the system can evolve without major architectural changes.
