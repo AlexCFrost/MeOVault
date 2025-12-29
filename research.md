@@ -34,6 +34,8 @@ From a system design standpoint, this research reinforces the decision to store 
 
 Overall, this research positions MiOVault as more than a note-taking application. It becomes a dynamic memory system that aligns with how human understanding evolves over time—capturing not just isolated thoughts, but the structure and progression of thinking itself.
 
+An important design consideration in MiOVault is reducing capture friction and cognitive load. Research in productivity systems shows that the effort required to organize information at the time of capture often discourages consistent usage. By removing the need for manual tagging, folder selection, or precise wording, MiOVault allows users to externalize thoughts quickly and naturally. Semantic embeddings shift organizational complexity from the user to the system, enabling effortless capture while preserving long-term retrievability.
+
 Privacy and data ownership are also key considerations. Since embeddings are derived representations of personal text, MiOVault treats them with the same sensitivity as raw notes. Embeddings are generated per request, stored per user, and are not reused across users. Future iterations may explore client-side embedding generation to further minimize data exposure.
 
 Finally, MiOVault positions embeddings as a foundational abstraction rather than a single feature. Once notes exist in a semantic vector space, higher-level capabilities such as clustering, trend detection, and thematic evolution over time become possible. This research-driven design ensures that the system can evolve without major architectural changes.
