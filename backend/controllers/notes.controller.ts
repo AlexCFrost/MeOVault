@@ -1,5 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import { Note } from '../models/note.model';
+import { generateEmbedding } from '../services/embedding.service';
 
 export const createNote = async (
   req: Request,
@@ -18,8 +19,15 @@ export const createNote = async (
       return;
     }
 
-    // Save note to MongoDB
-    const note = await Note.create({ content: content.trim() });
+    // Generate embedding for the note content
+    const { embedding, model } = await generateEmbedding(content.trim());
+
+    // Save note to MongoDB with embedding
+    const note = await Note.create({ 
+      content: content.trim(),
+      embedding,
+      embeddingModel: model
+    });
 
     // Return the saved note
     res.status(201).json({
